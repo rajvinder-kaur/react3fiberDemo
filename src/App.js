@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <Canvas >
-        <ambientLight intensity={0.4} />
-        <pointLight position={[0, -10, -10]} />
+        <ambientLight intensity={0.8} />
+        <pointLight position={[0, 10, 10]} />
         {/* <Suspense fallback={null}>
         <Model/>
         
