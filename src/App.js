@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { Suspense } from "react";
+import { createRoot } from 'react-dom/client'
+import { Canvas } from '@react-three/fiber'
 import './App.css';
-
+import { OrbitControls } from "@react-three/drei";
+import Model from './components/Model';
+import Viewer from "./components/Viewer";
+// import model from 'robo.glb';
 function App() {
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Canvas >
+        <ambientLight intensity={0.4} />
+        <pointLight position={[0, -10, -10]} />
+        {/* <Suspense fallback={null}>
+        <Model/>
+        
+      </Suspense> */}
+        {/* <mesh>
+          <boxGeometry />
+          <meshStandardMaterial />
+        </mesh>
+        <mesh position={[1,1,1]} >
+          <torusGeometry />
+          <meshStandardMaterial color="red"  />
+        </mesh> */}
+        {/* <OrbitControls /> */}
+        <Viewer modelPath='./Models/cell/scene.gltf' />
+      </Canvas>
     </div>
   );
 }
-
+// createRoot(document.getElementById('root')).render(<App />)
 export default App;
+
